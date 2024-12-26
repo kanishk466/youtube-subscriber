@@ -1,11 +1,13 @@
 const express = require('express')
 const app = require('./app.js')
+const cors = require("cors");
 const mongoose = require('mongoose')
 const port = 3000
 
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 // Connect to DATABASE
 const DATABASE_URL = "mongodb+srv://kanishk:Password%40123@blog-app.7u0dvkj.mongodb.net/subscribers";
